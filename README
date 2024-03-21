@@ -1,0 +1,20 @@
+1. Create a key-pair called "evilton-dev"
+2. Store the location of the pem file in the "EVILTON_PEM" environment variable
+3. Install dependencies: npm install
+4. Deploy CDK stack: cdk deploy
+5. Establish a tunnel to access RDS: ./start-tunnel &
+6. Fetch the database username and password from AWS Secrets Manager (TsReferenceStackOperational)
+6. Connect to the database via 127.0.0.1:5433
+
+
+curl -X POST \
+  'https://nk5uqy6el9.execute-api.eu-central-1.amazonaws.com/prod/wolfdesk/cases' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "type": "InitSupportCase",
+    "aggregateId": "e0325a40-b1c0-4301-a8b1-474feb37409e",
+    "customer": "327807ac-1611-4642-9ce9-49ee9de0d197",
+    "subject": "NEED HELP!",
+    "messageBody": "My printer is one fire!"
+  }'
+   
