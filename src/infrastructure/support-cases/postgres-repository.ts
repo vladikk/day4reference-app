@@ -27,10 +27,10 @@ export class PostgresSupportCasesRepository implements SupportCasesRepository {
         this.outboxDest = outboxDest;
     }
 
-    async save(supportCase: SupportCase): Promise<void> {
+    async save(supportCase: SupportCase, expectedVersion: number): Promise<void> {
         let id = supportCase.id;
         let data = supportCase.toJSON();
-        let version = supportCase.version + 1;
+        let version = expectedVersion + 1;
 
         let client = await this.connect();
 

@@ -11,7 +11,8 @@ export type InitSupportCase = SupportCaseCommand & {
     type: CommandType.InitSupportCase,
     customer: CustomerId,
     subject: Subject,
-    messageBody: MessageBody
+    messageBody: MessageBody,
+    expectedVersion: number | null
 }
 
 export type AssignAgent = SupportCaseCommand & {

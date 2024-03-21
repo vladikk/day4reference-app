@@ -61,7 +61,8 @@ let cmdInit: InitSupportCase = {
     subject: "My printer is on fire!",
     messageBody: "Help!",
     timestamp: new Date(),
-    metadata: {}
+    metadata: {},
+    expectedVersion: null
 }
 
 let cmdAssign: AssignAgent = {
@@ -69,7 +70,8 @@ let cmdAssign: AssignAgent = {
     type: CommandType.AssignAgent,
     agent: newAgentId(),
     timestamp: new Date(),
-    metadata: {}
+    metadata: {},
+    expectedVersion: null
 }
 
 

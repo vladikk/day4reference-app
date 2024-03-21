@@ -28,7 +28,8 @@ Given('an assigned support case', function (this: ICustomWorld) {
         type: CommandType.AssignAgent,
         agent: newAgentId(),
         timestamp: this.now,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     };
 
     supportCase.execute(cmd);
@@ -47,7 +48,8 @@ Given('the agent replies and changes the status to {word}', function (statusName
         message: "I'm on it!",
         newStatus: status,
         timestamp: this.now,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     };
 
     supportCase.execute(cmd);
@@ -65,7 +67,8 @@ When('an agent is assigned', function (this: ICustomWorld) {
         type: CommandType.AssignAgent,
         agent: newAgentId(),
         timestamp: this.now,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     };
 
     this.supportCase?.execute(cmd);
@@ -81,7 +84,8 @@ When('agent replies and changes the status to {word}', function (statusName: str
         message: "I'm on it!",
         newStatus: status,
         timestamp: this.now,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     };
 
 
@@ -96,7 +100,8 @@ When('customer replies', async function () {
         type: CommandType.TrackCustomerResponse,
         message: "I'm still on fire!",
         timestamp: this.now,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     };
 
     supportCase.execute(cmd);
@@ -143,7 +148,8 @@ function createSupportCase(timestamp: Date): SupportCase {
         subject: "My printer is on fire!",
         messageBody: "Help!",
         timestamp: timestamp,
-        metadata: {}
+        metadata: {},
+        expectedVersion: null
     }
 
     let supportCase = new SupportCase(cmd.aggregateId);
