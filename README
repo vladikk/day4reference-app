@@ -1,3 +1,5 @@
+To deploy the CDK stack and to establish a tunnel to the RDS instance, follow the steps below:
+
 1. Create a key-pair called "evilton-dev"
 2. Store the location of the pem file in the "EVILTON_PEM" environment variable
 3. Install dependencies: npm install
