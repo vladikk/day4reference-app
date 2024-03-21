@@ -50,7 +50,7 @@ export class PostgresSupportCasesRepository implements SupportCasesRepository {
             }
             
             let outboxEvents = await this.pushToOutbox(client, supportCase);
-            //await this.tryToPublishOutboxEvents(client, outboxEvents);
+            await this.tryToPublishOutboxEvents(client, outboxEvents);
             await client.query('COMMIT');
             supportCase.committed();
         } catch (error) {
