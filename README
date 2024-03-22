@@ -6,7 +6,8 @@ To deploy the CDK stack and to establish a tunnel to the RDS instance, follow th
 4. Deploy CDK stack: cdk deploy
 5. Establish a tunnel to access RDS: ./start-tunnel &
 6. Fetch the database username and password from AWS Secrets Manager (TsReferenceStackOperational)
-6. Connect to the database via 127.0.0.1:5433
+7. Connect to the database via 127.0.0.1:5433
+8. After the CDK stack is deployed, you can test the app by sending requests to its API endpoint:
 
 
 curl -X POST \
