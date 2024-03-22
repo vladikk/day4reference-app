@@ -22,9 +22,9 @@ export class PostgresSupportCasesRepositoryES implements SupportCasesEventSource
         }
     }
 
-    async Save(supportCase: SupportCase): Promise<void> {
+    async Save(supportCase: SupportCase, expectedVersion: number): Promise<void> {
         let id = supportCase.id;
-        let changeSetId = supportCase.version + 1;
+        let changeSetId = expectedVersion + 1;
         let payload = supportCase.newDomainEvents;
         
 

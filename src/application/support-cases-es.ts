@@ -16,7 +16,7 @@ export class SupportCasesApplicationService {
         try {
             let supportCase = await this.getSupportCase(command);
             supportCase.execute(command);
-            await this.repository.Save(supportCase);
+            await this.repository.Save(supportCase, command.expectedVersion ?? supportCase.version);
 
             return {
                 aggregateId: command.aggregateId,
